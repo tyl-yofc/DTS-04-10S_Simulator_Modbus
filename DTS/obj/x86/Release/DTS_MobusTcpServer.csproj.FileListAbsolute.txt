@@ -58,4 +58,3 @@ E:\模拟器\DTS-04-10S模拟器\DTS_ModbusTcp\DTS\obj\x86\Release\DTS.Propertie
 E:\模拟器\DTS-04-10S模拟器\DTS_ModbusTcp\DTS\obj\x86\Release\DTS_MobusTcpServer.csproj.GenerateResource.Cache
 E:\模拟器\DTS-04-10S模拟器\DTS_ModbusTcp\DTS\obj\x86\Release\DTS.exe
 E:\模拟器\DTS-04-10S模拟器\DTS_ModbusTcp\DTS\obj\x86\Release\DTS.pdb
-E:\模拟器\DTS-04-10S模拟器\DTS_ModbusTcp\DTS\obj\x86\Release\DTS_MobusTcpServer.csprojResolveAssemblyReference.cache

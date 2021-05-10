@@ -50,6 +50,12 @@ namespace DTS
             
         }
 
+        public void Init(string ip)
+        {
+            this._ip = ip;
+            connectsuccessflag = false;
+        }
+
         /// <summary>
         /// 启动服务
         /// </summary>
@@ -142,7 +148,7 @@ namespace DTS
                     switch (requetData[7])   //功能码
                     {                       
                         //读保持寄存器
-                        case 4:
+                        case 3:
                             {
                                 
                                 if (ServerStart.Create().DTS.Keys.Contains(this.equipnum))
@@ -207,7 +213,7 @@ namespace DTS
                             }
                             break;
                         //读输入寄存器
-                        case 3:
+                        case 4:
                             {        
                                 /*
                                 //当前位置到最后的长度

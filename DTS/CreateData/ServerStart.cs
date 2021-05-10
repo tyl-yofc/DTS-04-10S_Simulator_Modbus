@@ -21,6 +21,7 @@ namespace DTS.CreateData
             {
                 foreach (KeyValuePair<string, DTSEquip> kvp in DTS)
                 {
+                    kvp.Value.tcpServer.Init(Main.ServerIP);
                     kvp.Value.tcpServer.equipnum = kvp.Key;
                     kvp.Value.Start();
                     kvp.Value.tcpServer.Start();                   
@@ -28,7 +29,6 @@ namespace DTS.CreateData
             }
             catch (Exception ex)
             {
-
                 throw;
             }
             

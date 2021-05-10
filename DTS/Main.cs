@@ -27,6 +27,8 @@ namespace DTS
         public static Dictionary<string, DTSEquip> Equips; 
         public static Dictionary<string, CurverIni> channelCurvers;
         public static string oldEquipNum;
+
+        public static string ServerIP;
         public Main()
         {
             InitializeComponent();
@@ -44,17 +46,22 @@ namespace DTS
         }
         private void Main_Load(object sender, EventArgs e)
         {
+            cmb_ServerIP.Items.Clear();
             string name = Dns.GetHostName();
             IPAddress[] ipadrlist = Dns.GetHostAddresses(name);
             foreach(IPAddress ip in ipadrlist)
             {
-                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                    ipAddressInput.Value = ip.ToString();
+                // if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                //  ipAddressInput.Value = ip.ToString();
+                if(ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                    cmb_ServerIP.Items.Add(ip.ToString());
             }
             cmb_chooseEquip.Items.Clear();
             cmb_chooseEquip.Tag = null;
             RefreshCmbChooseEquip();    
             cmb_chooseEquip.Tag = 1;
+            if(cmb_ServerIP.Items.Count > 0)
+                cmb_ServerIP.SelectedIndex = 0;
         }
         private void RefreshCmbChooseEquip()
         {
@@ -185,6 +192,7 @@ namespace DTS
                 }
             }
             */
+            ServerIP = cmb_ServerIP.SelectedItem.ToString();
             if (Bt_Start.Text == "启 动")
             {   
                 ServerStart.Create().Start();               
